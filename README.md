@@ -1,171 +1,203 @@
 # 🏏 Cricket Tournament Management System (CTMS)
 
-## 📌 About the Project
+A web-based **Cricket Tournament Management System** developed as an academic assignment. The system focuses on managing cricket tournament information and automating live cricket match scorecard testing through probability-based match simulation.
 
-The Cricket Tournament Management System (CTMS) is a web-based application developed to manage cricket tournaments, teams, players, matches, and live match scoring.
+## 📌 Project Overview
 
-The system provides a centralized platform for tournament administration and real-time cricket match management. It includes match scoring functionality, player statistics, scorecards, and reporting features.
+The Cricket Tournament Management System (CTMS) is designed to simplify cricket tournament and match management while reducing the time required to test live cricket scorecards.
 
-## ✨ Features
+The project is developed in two main phases:
 
-### 1. User Management
-- User login and authentication
-- User management
+- **Phase 01 – Live Cricket Scorecard Test Automation**
+- **Phase 02 – Cricket Tournament Management System**
 
-### 2. Tournament Management
-- Create and manage tournaments
-- View tournament information
+The first phase focuses on automatically generating cricket match events using predefined probability ratios. The second phase focuses on managing tournament-related information through a centralized database and web services.
 
-### 3. Team Management
-- Manage cricket teams
-- View team details
+## 🎯 Project Objectives
 
-### 4. Player Management
-- Manage player information
-- View player details
+- Automate the testing of live cricket scorecards.
+- Generate random cricket match situations using probability-based logic.
+- Simulate ball-by-ball match events.
+- Update the scorecard dynamically without reloading the webpage.
+- Manage tournament and match-related information.
+- Store match data in a centralized database for future reference.
+- Provide web services for communication between the frontend and backend.
 
-### 5. Match Management
-- Create new cricket matches
-- View match lists
-- Initialize and start matches
-- View match summaries
+## ⚙️ Phase 01 – Live Cricket Scorecard Test Automation
 
-### 6. Live Match Scoring
-- Live match score updates
-- Ball and delivery generation
-- Batting statistics
-- Bowling statistics
-- Live match state tracking
-- Detailed match scorecards
+The test automation module simulates a cricket match by generating random match events according to predefined probability ratios.
 
-### 7. Reports
-- Generate and view cricket-related reports
-- Access match and player statistics
+### 1. Probability-Based Match Simulation
 
-## 🛠️ Technologies Used
+The system uses probability ratios to determine possible events during a cricket delivery.
 
-- **Backend:** PHP
-- **Frontend:** HTML, CSS, JavaScript
-- **Database:** MySQL
-- **Styling:** CSS3
-- **Development Environment:** Apache / XAMPP
+Examples of simulated events include:
 
-## 📂 Project Structure
+- Successful and failed deliveries
+- Legal and illegal deliveries
+- Batting, defending, and leaving the ball
+- Ball contact with the bat, leg guard, gloves, or other body parts
+- Runs scored (0, 1, 2, 3, 4, 5, and 6)
+- Catches and missed catches
+- Bowled dismissals
+- LBW decisions
+- Run-outs and stumpings
+- Wicketkeeper actions
 
-```text
-CTMS/
-│
-├── api/
-│   ├── bootstrap.php
-│   ├── generate_ball.php
-│   ├── generate_delivery.php
-│   ├── get_batting.php
-│   ├── get_bowling.php
-│   ├── get_live_state.php
-│   ├── get_scorecard.php
-│   ├── init_match.php
-│   ├── login.php
-│   ├── logout.php
-│   ├── start_match.php
-│   └── update_score.php
-│
-├── assets/
-│   ├── css/
-│   │   ├── app.css
-│   │   └── style.css
-│   │
-│   └── js/
-│       ├── autoplay.js
-│       └── theme.js
-│
-├── config/
-│   └── db.php
-│
-├── core/
-│   ├── Auth.php
-│   ├── MatchEngine.php
-│   ├── MatchLogic.php
-│   └── RandomSelector.php
-│
-├── pages/
-│   ├── create_match.php
-│   ├── dashboard.php
-│   ├── live_match.php
-│   ├── login.php
-│   ├── match_list.php
-│   ├── match_summary.php
-│   ├── players.php
-│   ├── reports.php
-│   ├── teams.php
-│   ├── tournaments.php
-│   ├── users.php
-│   │
-│   └── partials/
-│       ├── layout_bottom.php
-│       ├── layout_top.php
-│       └── nav.php
-│
-├── sql/
-│   └── ctms.sql
-│
-├── index.php
-└── README.md
-```
+### 2. Random State Generation
 
-## ⚙️ Installation and Setup
+Random numbers are used to select an event according to its assigned probability ratio.
 
-### Prerequisites
+For example, when four bowlers have equal selection probabilities:
 
-- XAMPP or another PHP development environment
-- PHP
-- MySQL
-- Web Browser
+| Bowler | Selection Probability |
+|---|---:|
+| Player 01 | 25% |
+| Player 02 | 25% |
+| Player 03 | 25% |
+| Player 04 | 25% |
 
-### Step 1: Clone the Repository
+The random selection mechanism chooses one bowler from the available options.
 
-```bash
-git clone https://github.com/dmync/CTMS.git
-```
+### 3. Live Scorecard Automation
 
-### Step 2: Move the Project
+The simulation generates match events automatically and updates the scorecard based on the generated results.
 
-Copy the project folder into the XAMPP `htdocs` directory.
+The scorecard includes:
 
-### Step 3: Start XAMPP
+- Batting information
+- Bowling information
+- Runs scored
+- Wickets
+- Overs
+- Extras
+- Total innings score
+- Player performance details
 
-Start the following services:
+### 4. Autoplay Functionality
 
-- Apache
-- MySQL
+The Autoplay feature starts the match simulation and continues generating events until the match reaches its completion condition.
 
-### Step 4: Import the Database
+### 5. Dynamic Scorecard Updates
 
-1. Open phpMyAdmin.
-2. Create a new MySQL database.
-3. Select the database.
-4. Import the `sql/ctms.sql` file.
+AJAX is used to communicate with backend services and update the live scorecard without redirecting to another page or reloading the current page.
 
-### Step 5: Configure Database Connection
+## 🏆 Phase 02 – Cricket Tournament Management System
 
-Open `config/db.php` and update the database connection settings according to your local environment.
+The second phase extends the project into a centralized cricket tournament management application.
 
-### Step 6: Run the Application
+The system scope includes the following management areas:
 
-Open your browser and visit:
+- User authentication and role management
+- Tournament information management
+- Team and player information management
+- Match management
+- Live scorecard and match data management
+
+The system uses web services to exchange information between the frontend and backend. Tournament and match records are intended to be stored in a centralized database for future reference.
+
+## 🧠 System Logic
+
+The match simulation follows a decision-based process.
+
+1. Select a bowler.
+2. Generate a delivery result.
+3. Determine whether the delivery is legal or illegal.
+4. Generate the batsman's response.
+5. Determine the type of ball contact.
+6. Generate runs, fielding events, or dismissal decisions.
+7. Update the scorecard.
+8. Continue until the innings or match is completed.
+
+The probability values can initially be predefined. When sufficient player-specific historical data is available, the system can use calculated player statistics to determine more suitable probability ratios.
+
+## 🔌 Web Services / API
+
+The system uses web services to exchange data between the client and server.
+
+Example API documentation format:
+
+| Field | Description |
+|---|---|
+| Web Service Name | User Login |
+| URL | `localhost/ctms/loginvalidate.php` |
+| Method | POST |
+| Request Format | Form Data |
+| Response Format | JSON |
+
+**Sample Request**
 
 ```text
-http://localhost/CTMS/
+username=asanka
+password=12345678
 ```
 
-## 🎯 Project Purpose
+**Sample JSON Response**
 
-This project was developed to apply web development and database management concepts in a practical cricket tournament management application.
+```json
+{
+  "Userid": "112",
+  "UserRoleId": "2"
+}
+```
 
-It demonstrates the use of PHP, MySQL, JavaScript, and structured application development.
+Other API documentation should describe the relevant service URL, request method, payload, and response format.
 
-## 👩‍💻 Author
+## 🛠️ Technologies
 
-**Developed by:** dmync
+The project requirements and source structure involve the following technologies:
 
-**GitHub Repository:**  
-https://github.com/dmync/CTMS
+- **PHP** – Server-side development
+- **JavaScript** – Client-side functionality
+- **AJAX** – Asynchronous communication
+- **JSON** – Data exchange between web services and the frontend
+- **SQL** – Database operations
+- **HTML & CSS** – Web interface development
+
+## 📂 Main System Components
+
+The project includes core match simulation components such as:
+
+- `MatchEngine` – Match simulation engine
+- `MatchLogic` – Decision-making and match rules
+- `RandomSelector` – Random selection based on probability ratios
+- API services – Communication between the frontend and backend
+
+## 📄 System Documentation
+
+The assignment documentation covers:
+
+1. Use Case Diagram
+2. Class Diagram
+3. ER / EER Diagram
+4. Web Service / API Documentation
+5. Database SQL Statements
+6. PHP Source Code
+7. Software Testing Document
+
+## 🧪 Testing
+
+The test automation process is intended to verify different cricket match situations, including:
+
+- Random player selection
+- Delivery outcomes
+- Runs and extras calculations
+- Wicket and dismissal decisions
+- Scorecard updates
+- Match completion conditions
+- AJAX-based updates without page reloads
+
+## 🎓 Project Information
+
+| Item | Details |
+|---|---|
+| Project Name | Cricket Tournament Management System |
+| Abbreviation | CTMS |
+| Project Type | University Academic Assignment |
+| Main Domain | Cricket Tournament Management |
+| Special Feature | Live Cricket Scorecard Test Automation |
+| GitHub | [dmync](https://github.com/dmync) |
+
+---
+
+**Note:** This project was developed for academic purposes as part of a university assignment. The probability-based simulation is intended to support automated testing of cricket scorecard scenarios, rather than predict actual cricket match outcomes.

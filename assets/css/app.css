@@ -1,0 +1,140 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --sidebar: #0f172a;
+  --sidebarText: #e5e7eb;
+  --sidebarMuted: #94a3b8;
+}
+
+[data-theme="dark"]{
+  --bg: #0b1220;
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1f2937;
+  --primary: #60a5fa;
+  --sidebar: #0b1220;
+  --sidebarText: #e5e7eb;
+  --sidebarMuted: #94a3b8;
+}
+
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.app-shell{
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar{
+  width: 270px;
+  background: var(--sidebar);
+  color: var(--sidebarText);
+  padding: 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  letter-spacing: 0.4px;
+  margin-bottom: 18px;
+}
+
+.brand .logo{
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  display:flex; align-items:center; justify-content:center;
+}
+
+.navlink{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius: 12px;
+  color: var(--sidebarText);
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.navlink:hover{
+  background: rgba(255,255,255,0.08);
+  color: var(--sidebarText);
+}
+
+.navlink .muted{
+  color: var(--sidebarMuted);
+  font-size: 12px;
+}
+
+.main{
+  flex: 1;
+  padding: 18px 20px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.page-title{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-ui{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.table{
+  color: var(--text);
+}
+.table thead{
+  background: transparent !important;
+}
+.table-bordered{
+  border-color: var(--border) !important;
+}
+.table-bordered td, .table-bordered th{
+  border-color: var(--border) !important;
+}
+
+.badge-soft{
+  background: rgba(37,99,235,0.12);
+  color: var(--primary);
+  border: 1px solid rgba(37,99,235,0.22);
+}
+
+.btn-primary{
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.small-muted{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.icon-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
